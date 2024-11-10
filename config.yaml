@@ -1,0 +1,29 @@
+
+app:
+  config:
+    name: 'swhertsu3a-app'
+
+llm:
+  provider: openai
+  config:
+    model: 'gpt-4o'
+    temperature: 0.5
+    max_tokens: 1000
+    top_p: 0.5
+    stream: true
+    system_prompt: "Make sure you provide as much detail as possible. Work out actual dates from schedules given in the knowledge base and give these in answers as well as stating the schedule, contact names and contact numbers. Always work out dates from schedules assuming the schedules refer to current year"
+    
+
+vectordb:
+  provider: chroma
+  config:
+    collection_name: 'gen4'
+    dir: ./db4
+    allow_reset: true
+
+embedder:
+  provider: openai
+  config:
+    model: 'text-embedding-3-small'
+
+
